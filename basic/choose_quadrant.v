@@ -16,7 +16,7 @@ fn quadrant(x int, y int) ?int {
 	} else if x < 0 && y < 0 {
 		return int(Quadrant.quadrant3)
 	} else if x > 0 && y < 0 {
-        return int(Quadrant.quadrant4)
+		return int(Quadrant.quadrant4)
 	} else {
 		return error("value on outside of scope")
 	}

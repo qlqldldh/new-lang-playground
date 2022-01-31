@@ -2,8 +2,7 @@
 import os
 
 fn update_digits(mut digits []int, n1 int, n2 int, n3 int) {
-	multipled_num_str := (n1 * n2 * n3).str()
-	for c in multipled_num_str {
+	for c in (n1 * n2 * n3).str() {
 		digits[c.ascii_str().int()] += 1
 	}
 }
