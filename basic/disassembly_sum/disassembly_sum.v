@@ -1,4 +1,6 @@
 // https://www.acmicpc.net/problem/2231 - Disassembly Sum
+module disassembly_sum
+
 import os
 import math
 
@@ -15,8 +17,7 @@ fn get_disassembly_sum(num int) int {
 	return result
 }
 
-fn main() {
-	num := os.input("").int()
+fn solution(num int) int {
 	mut min_val := max_val
 	mut n := num
 
@@ -33,5 +34,12 @@ fn main() {
 		min_val = 0
 	}
 
-	println(min_val)
+	return min_val
+}
+
+fn main() {
+	num := os.input("").int()
+	result := solution(num)
+
+	println(result)
 }

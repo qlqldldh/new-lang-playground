@@ -1,4 +1,6 @@
 // https://www.acmicpc.net/problem/1157 - Word Study
+module word_study
+
 import os
 
 const (
@@ -22,7 +24,7 @@ fn update_alphabet_appearance_count(mut arr []int, b byte) {
 fn find_max_counted_alphabet(arr []int) string {
 	mut max_idx := 0
 	for idx in 1..arr.len {
-		if arr[max_idx] == arr[idx] {
+		if arr[idx] != 0 && arr[max_idx] == arr[idx] {
 			return unknown
 		}
 		if arr[max_idx] < arr[idx] {
@@ -33,14 +35,17 @@ fn find_max_counted_alphabet(arr []int) string {
 	return idx_to_upper_char(max_idx)
 }
 
-fn main() {
-	str := os.input("").to_lower()
+fn solution(str string) string {
 	mut alpha_cnts := []int{len: num_alphabets, init: 0}
 
-	for c in str {
+	for c in str.to_lower() {
 		update_alphabet_appearance_count(mut alpha_cnts, c)
 	}
 
-	result := find_max_counted_alphabet(alpha_cnts)
-	println(result)
+	return find_max_counted_alphabet(alpha_cnts)
+}
+
+fn main() {
+	str := os.input("")
+	println(solution(str))
 }

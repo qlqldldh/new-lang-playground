@@ -1,4 +1,6 @@
 // https://www.acmicpc.net/problem/14681 - Finding Quadrant
+module choose_quadrant
+
 import os
 
 enum Quadrant{
@@ -26,5 +28,5 @@ fn main() {
 	x := os.input("").int()
 	y := os.input("").int()
 	
-	println(quadrant(x, y)?)
+	println(quadrant(x, y) or {panic("invalid input values")})
 }

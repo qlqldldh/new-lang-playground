@@ -1,4 +1,6 @@
 // https://www.acmicpc.net/problem/2941
+module croatia_alphabet
+
 import os
 
 const (
@@ -7,7 +9,7 @@ const (
 	]
 )
 
-fn find_croatia_alphabet(str string, idx int) ?string {
+fn find_croatia_alphabet(str string, idx int) string {
 	for alphabet in croatia_alphabets {
 		if idx + alphabet.len > str.len {
 			continue
@@ -17,7 +19,7 @@ fn find_croatia_alphabet(str string, idx int) ?string {
 		}
 	}
 
-	return "none"
+	return str[idx].ascii_str()
 }
 
 fn main() {
@@ -27,8 +29,8 @@ fn main() {
 	mut idx := 0
 
 	for idx < word.len {
-		alphabet = find_croatia_alphabet(word, idx)?
-		idx += if alphabet == "none" {1} else {alphabet.len}
+		alphabet = find_croatia_alphabet(word, idx)
+		idx += alphabet.len
 		result += 1
 	}
 

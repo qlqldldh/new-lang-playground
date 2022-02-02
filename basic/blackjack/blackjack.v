@@ -1,4 +1,6 @@
 // https://www.acmicpc.net/problem/2798 - Blackjack
+module blackjack
+
 import os
 import arrays
 import math
@@ -36,7 +38,7 @@ fn closest_cards_sum(cards []int, mut selected_cards []int, m int, prev_selected
 	return min_sum
 }
 
-fn main() {
+fn main() ? {
 	values := values_from_input()
 	// n := values[0]
 	m := values[1]

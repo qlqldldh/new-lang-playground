@@ -1,4 +1,6 @@
 // https://www.acmicpc.net/problem/1436 - Director Shom
+module director_shom
+
 import os
 
 const end_repr_num = "666"
@@ -13,8 +15,7 @@ fn has_end_repr(s string) bool {
 	return false
 }
 
-fn main() {
-	n := os.input("").int()
+fn solution(n int) int {
 	mut cnt := 1
 	mut movie_name_n := end_repr_num.int()
 
@@ -25,5 +26,11 @@ fn main() {
 		}
 	}
 
-	println(movie_name_n)
+	return movie_name_n
+}
+
+fn main() {
+	n := os.input("").int()
+	result := solution(n)
+	println(result)
 }

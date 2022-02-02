@@ -1,4 +1,6 @@
 // https://www.acmicpc.net/problem/1065 - Hansu
+module hansu
+
 import os
 
 fn btoi(b byte) int {
@@ -19,8 +21,7 @@ fn is_hansu(n int) bool {
 	return true
 }
 
-fn main() {
-	num := os.input("").int()
+fn solution(num int) int {
 	mut result := 0
 
 	for n in 1..(num + 1) {
@@ -29,5 +30,10 @@ fn main() {
 		}
 	}
 
-	println(result)
+	return result
+}
+
+fn main() {
+	num := os.input("").int()
+	println(solution(num))
 }
